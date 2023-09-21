@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block container %}
+<div class="text-center">
+    <h1 style="font-size: 40px;">Balance:<br>{{ btc }} BTC</h1>
+</div>
+{% if crypto_data %}
+<br>
+<hr>
+<h2>Top 5 crypto current price:</h2><br>
+<div class="text-center">
+    {% for crypto in crypto_data %}
+    <div class="card m-3" style="width: 18rem; display: inline-block;">
+        <div class="card-body">
+            <h5 class="card-title">{{ crypto.name}}</h5>
+            <p class="card-text"><b>USD:</b> ${{ crypto.current_price }}</p>
+            <p class="card-text"><b>NPR:</b> Rs{{crypto.current_price * 133.33}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

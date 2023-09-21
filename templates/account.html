@@ -1,0 +1,23 @@
+{%extends 'layout.html'%}
+{%block container%}
+<h1>Account</h1>
+<hr>
+<form method="GET">
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Private_key</label>
+    <input type="text" disabled value="{{account.pv_key}}"class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Public_key</label>
+    <input type="text" disabled value="{{account.pb_key}}" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Address</label>
+    <input type="text" disabled value="{{account.address}}" class="form-control" id="exampleInputPassword1">
+  </div>
+</form>
+<br>
+<div class="text-center">
+    <a class="btn btn-danger" href="/delete/{{current_user.id}}">Delete Account</a>
+</div>
+{%endblock%}

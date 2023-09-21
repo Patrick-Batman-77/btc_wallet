@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block container %}
+<div class="alert alert-warning"><b>Copy Address inorder to loogin to your wallet !!</b></div>
+{%if error %}
+<div class="alert alert-danger">{{error}}</div>
+{%endif%}
+<h1>Create Wallet</h1>
+<small>This is your new BTC wallet information !!</small>
+<br><hr>
+<form method="GET">
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Private_key</label>
+    <input type="text" disabled value="{{info.private_key}}"class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Public_key</label>
+    <input type="text" disabled value="{{info.public_key}}" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Address</label>
+    <input type="text" disabled value="{{info.address}}" class="form-control" id="exampleInputPassword1">
+  </div>
+</form>
+<span>Click here to login !!</span>
+<a class="text-decoration-none" href="/login">Login</a>
+{%endblock%}
